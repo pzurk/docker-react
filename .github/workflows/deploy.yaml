@@ -23,7 +23,7 @@ jobs:
         run: rm Dockerfile.dev
 
       - name: Generate deployment package
-        run: zip -r deploy.zip . -x '*.git*'
+        run: zip -r deploy.zip . -x '*.git*' -x 'docker-compose*.yml'
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
